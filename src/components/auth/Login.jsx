@@ -144,7 +144,7 @@ const Login = ({ onClose = () => {}, onLoginSuccess = () => {} }) => {
               </div>
               <p className="text-sm mt-3">
                 Don't have an account?{' '}
-                <Link to="/register-user" className="text-indigo-600 underline">
+                <Link to="/register-user" className="text-indigo-600 underline" onClick={onClose}>
                   Register
                 </Link>
               </p>
