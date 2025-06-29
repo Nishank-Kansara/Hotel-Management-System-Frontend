@@ -47,7 +47,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/logout" element={<Logout />} />
-                <Route path="/register" element={<Registration />} />
+                <Route path="/register-user" element={<Registration />} />
                 <Route path="/room-info/:roomId/:checkIn/:checkOut" element={<RoomInfo />} />
                 <Route path="/booking-success" element={<BookingSuccess />} />
                 <Route path="/find-booking" element={<FindBooking />} />
