@@ -109,18 +109,22 @@ export async function bookedRoom(roomId, payload) {
 }
 
 export async function getAllBookings() {
-    try {
-        const result = await api.get("/bookings/all-bookings");
-        return result.data;
-    } catch (error) {
-        throw new Error(`Error fetching bookings : ${error.message}`);
-
-    }
+  try {
+    const result = await api.get("/bookings/all-bookings", {
+      headers: getHeader() // ✅ added Authorization header
+    });
+    return result.data;
+  } catch (error) {
+    throw new Error(`Error fetching bookings : ${error.message}`);
+  }
 }
+
 
 export async function getBookingByConfirmationCode(confirmationCode) {
     try {
-        const result = await api.get(`/bookings/confirmation/${confirmationCode}`);
+        const result = await api.get(`/bookings/confirmation/${confirmationCode}`, {
+            headers: getHeader()
+        });
         return result.data;
     } catch (error) {
         if (error.response && error.response.data) {
@@ -133,7 +137,9 @@ export async function getBookingByConfirmationCode(confirmationCode) {
 
 export async function cancelBooking(bookingId) {
     try {
-        const result = await api.delete(`/bookings/booking/${bookingId}/delete`);
+        const result = await api.delete(`/bookings/booking/${bookingId}/delete`, {
+            headers: getHeader()
+        });
         return result.data;
     } catch (error) {
         throw new Error(`Error cancelling booking: ${error.message}`);
