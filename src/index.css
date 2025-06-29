@@ -1,0 +1,354 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+/* ====================
+   Variables & Utilities
+   ==================== */
+:root {
+  /* Naya palette: indigo → pink */
+  --primary-color: #6366F1;      /* indigo-500 */
+  --primary-hover: #EC4899;      /* pink-500 */
+  --text-dark: rgb(33, 33, 33);  /* thoda deep dark */
+  --accent-green: #10B981;       /* emerald-500 */
+  --accent-gold: #F59E0B;        /* amber-500 */
+}
+
+/* ====================
+   General UI
+   ==================== */
+.card {
+  opacity: 0.95; /* thoda transparency kam ki */
+}
+
+.vertical-rule {
+  border-left: 1px solid #ccc; /* black ki jagah soft grey */
+  height: 100vh;
+}
+
+/* ====================
+   Buttons
+   ==================== */
+.btn-hotel {
+  background: linear-gradient(to right, var(--primary-color), var(--primary-hover));
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.5rem 1.25rem;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  min-width: 140px;
+}
+
+.btn-hotel:hover {
+  background: linear-gradient(to right, var(--primary-hover), var(--primary-color));
+  transform: translateY(-2px);
+}
+
+/* Optional: Responsive full width on mobile */
+@media (max-width: 640px) {
+  .btn-hotel {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    min-width: unset;
+  }
+}
+
+/* ====================
+   Text Styling
+   ==================== */
+.hotel-color {
+  @apply bg-gradient-to-br from-[#6366F1] to-[#EC4899] text-transparent bg-clip-text font-bold;
+  text-shadow: none !important;
+}
+
+.room-price {
+  font-size: medium;
+  color: var(--accent-gold);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* ====================
+   Navbar
+   ==================== */
+.navbar {
+  padding: 0;
+  background-color: #f9f9f9; /* light background for contrast */
+}
+
+.navbar .navbar-nav .nav-link {
+  padding: 1em;
+  color: var(--text-dark);
+}
+
+.navbar .navbar-nav .nav-item {
+  position: relative;
+  margin: 0 1em;
+}
+
+.navbar .navbar-nav .nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  width: 0;
+  margin: 0 auto;
+  height: 3px; /* thoda patla underline */
+  transition: all 0.4s;
+}
+
+.navbar .navbar-nav .nav-item:hover::after {
+  width: 100%;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-brand {
+  color: var(--text-dark);
+}
+
+/* Navbar Responsiveness */
+@media (max-width: 767.98px) {
+  .navbar .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar .nav-link {
+    padding: 0.75rem 0;
+    border-top: 1px solid #e2e8f0; /* light border */
+  }
+
+  .navbar .nav-item::after {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .navbar .nav-link {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+/* ====================
+   Card Grid
+   ==================== */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .card {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
+/* ====================
+   Parallax & Headers
+   ==================== */
+.parallax,
+.header,
+.header-banner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.6); /* thoda halka shadow */
+}
+
+.parallax {
+  background-image: url("./assets/images/parrall.jpg");
+  background-attachment: fixed;
+  height: 50vh;
+  margin-top: 50px;
+}
+
+.header {
+  background-image: url("./assets/images/services4.jpg");
+  height: 150px;
+}
+
+.header-title {
+  color: #fff;
+  font-size: 4rem;
+  align-content: center;
+}
+
+.header-banner {
+  background-image: url("./assets/images/services-1.jpg");
+  height: 80vh;
+}
+
+@media (max-width: 991.98px) {
+  .parallax {
+    height: 40vh;
+  }
+  .header-banner {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .parallax {
+    height: 30vh;
+  }
+  .header-banner {
+    height: 40vh;
+  }
+  .header-banner h1 {
+    font-size: 16px;
+  }
+}
+
+/* ====================
+   Overlay & Banner
+   ==================== */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  justify-content: flex-start;
+}
+
+/* ====================
+   Footer
+   ==================== */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  height: 60px;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+@media (max-width: 575.98px) {
+  .footer {
+    position: static;
+    padding: 1.5rem 0;
+  }
+}
+
+/* ====================
+   Animations
+   ==================== */
+.animated {
+  animation-duration: 1s;
+}
+
+.animated-texts h1 {
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.animated-texts p,
+h1,
+h2 {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, to {
+    transform: translate3d(0, 0, 0);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  40%, 60% {
+    transform: translate3d(0, -30px, 0);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+  }
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.bounceIn {
+  animation-name: bounceIn;
+}
+
+/* ====================
+   Input Spinner Removal
+   ==================== */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-spinner[type='number'] {
+  -moz-appearance: textfield;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-in-out;
+}
+
