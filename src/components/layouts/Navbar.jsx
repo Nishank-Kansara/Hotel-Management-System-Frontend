@@ -46,7 +46,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="hotel-color text-3xl font-extrabold uppercase tracking-widest">
-              NJ Hotel
+              JHotel
             </Link>
 
             {/* Desktop Nav */}
