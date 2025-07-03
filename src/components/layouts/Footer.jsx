@@ -10,7 +10,7 @@ const Footer = () => {
                 <Row>
                     <Col>
                         <p className="mb-0" style={{ fontSize: '0.9rem' }}>
-                            &copy; {today.getFullYear()} NJ-Hotel
+                            &copy; {today.getFullYear()} JHotel
                         </p>
                     </Col>
                 </Row>
