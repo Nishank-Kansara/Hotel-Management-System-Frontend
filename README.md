@@ -1,12 +1,62 @@
-# React + Vite
+# 🖥️ Hotel Management System – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **ReactJS** frontend for the Hotel Management System, connected to a Spring Boot backend and PostgreSQL database (Supabase). Users can browse, filter, and book rooms. Admins can manage room listings via a responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+* User Login / Registration with JWT
+* Browse rooms based on room type
+* Filter by date and sort by price (low to high, high to low)
+* Book rooms and receive confirmation email
+* Forgot password with OTP verification
+* Admin can add/edit/delete rooms
+* Admin can view and manage all bookings
+* Responsive UI (TailwindCSS + Bootstrap)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 💠 Tech Stack
+
+* **ReactJS**
+* **Axios**
+* **TailwindCSS + Bootstrap**
+* **React Router DOM**
+* **JWT for auth flow**
+
+---
+
+## 📦 Setup Instructions
+
+```bash
+git clone https://github.com/Nishank-Kansara/Hotel-Management-System-Frontend.git
+cd Hotel-Management-System-Frontend
+npm install
+npm start
+```
+
+> 🔑 Configure `.env` file:
+
+```env
+REACT_APP_API_BASE_URL=https://hotel-management-system-1-80d1.onrender.com/api
+```
+
+---
+
+## 🌍 Live Site
+
+🔗 [https://hotel-management-system-b7rh.onrender.com](https://hotel-management-system-b7rh.onrender.com)
+
+---
+
+## 🔗 Backend Repo
+
+Backend Spring Boot API:
+👉 [https://github.com/Nishank-Kansara/Hotel-Management-System-Backend](https://github.com/Nishank-Kansara/Hotel-Management-System-Backend)
+
+---
+
+## 👨‍💼 Author
+
+**Nishank Kansara** – [@Nishank-Kansara](https://github.com/Nishank-Kansara)
